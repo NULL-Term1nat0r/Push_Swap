@@ -6,7 +6,7 @@
 /*   By: estruckm <estruckm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 14:26:43 by estruckm          #+#    #+#             */
-/*   Updated: 2023/01/22 23:17:52 by estruckm         ###   ########.fr       */
+/*   Updated: 2023/01/23 22:33:25 by estruckm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,17 @@
 int main (int nbr_arg, char **arg)
 {
 	int nbr[nbr_arg - 1];
-	p_list *a;
 
 	int i;
 	int j;
+	p_list **a;
+	p_list **b;
+	p_list *c;
 
 	i = 0;
 	j = 0;
-	a = (p_list*)malloc(sizeof(p_list));
+	a = (p_list**)malloc(sizeof(p_list));
+	b = (p_list**)malloc(sizeof(p_list));
 
 	while (arg[i + 1] != 0)
 	{
@@ -33,12 +36,15 @@ int main (int nbr_arg, char **arg)
 		printf("%d\n", nbr[i]);
 		i++;
 	}
-	while (j < nbr_arg)
+	while (j < nbr_arg - 1)
+		ft_push_front(a, nbr[j++]);
+	c = *a;
+	while (c)
 	{
-		ft_element_new(nbr[j], a);
-		j++;
+		printf("%d ", c->nbr);
+		c = c->next;
 	}
-	printf("Node data: %d\n", a->nbr);
+	p_list->next->next
 
 	return 0;
 }
@@ -63,3 +69,54 @@ int main (int nbr_arg, char **arg)
 // }
 
 
+// #include <stdio.h>
+// #include <stdlib.h>
+
+// struct node {
+//     int data;
+//     struct node* next;
+// };
+
+// int main() {
+//     struct node* head = NULL;
+//     struct node* second = NULL;
+//     struct node* third = NULL;
+//     struct node* fourth = NULL;
+//     struct node* fifth = NULL;
+
+//     // allocate 5 nodes in the heap
+//     head = (struct node*)malloc(sizeof(struct node));
+//     second = (struct node*)malloc(sizeof(struct node));
+//     third = (struct node*)malloc(sizeof(struct node));
+//     fourth = (struct node*)malloc(sizeof(struct node));
+//     fifth = (struct node*)malloc(sizeof(struct node));
+
+//     // put data in the first node
+//     head->data = 1;
+//     head->next = second;
+
+//     // put data in the second node
+//     second->data = 2;
+//     second->next = third;
+
+//     // put data in the third node
+//     third->data = 3;
+//     third->next = fourth;
+
+//     // put data in the fourth node
+//     fourth->data = 4;
+//     fourth->next = fifth;
+
+//     // put data in the fifth node
+//     fifth->data = 5;
+//     fifth->next = NULL;
+
+//     // print the data in each node
+//     struct node* current = head;
+//     while (current != NULL) {
+//         printf("%d\n", current->data);
+//         current = current->next;
+//     }
+
+//     return 0;
+// }

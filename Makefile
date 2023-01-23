@@ -6,13 +6,13 @@
 #    By: estruckm <estruckm@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/31 13:07:12 by estruckm          #+#    #+#              #
-#    Updated: 2023/01/22 23:19:22 by estruckm         ###   ########.fr        #
+#    Updated: 2023/01/23 16:01:35 by estruckm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	push_swap.a
 # Name des kompilierten Programms
-SRCS	=	ft_element_new.c
+SRCS	=	ft_element_new.c ft_push_front.c
 # Hier alle zu kompilierenden .c-Dateien erfassen
 OBJS	=	${SRCS:.c=.o}
 # Damit nur veränderte .c-Dateien in .o-Dateien kompiliert werden
