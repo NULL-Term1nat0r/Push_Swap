@@ -6,7 +6,7 @@
 /*   By: estruckm <estruckm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 14:26:43 by estruckm          #+#    #+#             */
-/*   Updated: 2023/01/23 22:33:25 by estruckm         ###   ########.fr       */
+/*   Updated: 2023/01/25 22:49:52 by estruckm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,36 +15,38 @@
 #include <stdlib.h>
 #include <xlocale.h>
 
-int main (int nbr_arg, char **arg)
+static void get_arguments(t_lst **a, int nbr_arg, char **arg)
 {
-	int nbr[nbr_arg - 1];
-
 	int i;
-	int j;
-	p_list **a;
-	p_list **b;
-	p_list *c;
 
 	i = 0;
-	j = 0;
-	a = (p_list**)malloc(sizeof(p_list));
-	b = (p_list**)malloc(sizeof(p_list));
+	while (arg[++i] != 0)
+		ft_push_front(a, ft_atoi(arg[i]));
+}
+int main (int nbr_arg, char **arg)
+{
+	t_lst **a;
+	t_lst **b;
+	int size;
+	a = (t_lst**)malloc(sizeof(t_lst));
+	b = (t_lst**)malloc(sizeof(t_lst));
+	size = 0;
+	t_lst *c;
 
-	while (arg[i + 1] != 0)
-	{
-		nbr[i] = atoi(arg[i + 1]);
-		printf("%d\n", nbr[i]);
-		i++;
-	}
-	while (j < nbr_arg - 1)
-		ft_push_front(a, nbr[j++]);
+	get_arguments(a, nbr_arg, arg);
 	c = *a;
 	while (c)
 	{
 		printf("%d ", c->nbr);
 		c = c->next;
 	}
-	p_list->next->next
+	printf("\n%d\n", ft_count_stack(*a));
+	printf("%p\n", c = (ft_second_last(*a)));
+	printf("%d\n", c->nbr);
+	printf("%p\n", c = (ft_last(*a)));
+	printf("%d\n", c->nbr);
+	
+
 
 	return 0;
 }

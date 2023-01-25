@@ -1,32 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_push_b.c                                        :+:      :+:    :+:   */
+/*   ft_second_last.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: estruckm <estruckm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/23 17:27:06 by estruckm          #+#    #+#             */
-/*   Updated: 2023/01/25 23:16:15 by estruckm         ###   ########.fr       */
+/*   Created: 2023/01/25 18:26:47 by estruckm          #+#    #+#             */
+/*   Updated: 2023/01/25 18:44:29 by estruckm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void ft_push_b(t_lst **head_ref_1, t_lst **head_ref_2)
+t_lst *ft_second_last(t_lst *head_ref)
 {
-	t_lst	*tmp_1;
-	t_lst	*tmp_2;
-	tmp_1 = (t_lst *)malloc(sizeof(t_lst));
-	if (!tmp_1)
-		return NULL;
-	tmp_2 = (t_lst *)malloc(sizeof(t_lst));
-	if (!tmp_2)
-		return NULL;
-	tmp_1 = ft_last(*head_ref_1);
-	ft_add_back(head_ref_2, tmp_1);
-	tmp_2 = ft_second_last(*head_ref_1);
-	tmp_2-> next = NULL;
+	t_lst *current;
+	t_lst *prev;
 
+	current = head_ref;
+	prev = NULL;
+	while (current->next != NULL)
+	{
+		prev = current;
+		current = current->next;
+	}
 
-
+	return (prev);
 }
+// void showSecondLast(struct Node* head) {
+//     struct Node* prev = NULL;
+//     struct Node* curr = head;
+
+//     while (curr->next != NULL) {
+//         prev = curr;
+//         curr = curr->next;
+//     }

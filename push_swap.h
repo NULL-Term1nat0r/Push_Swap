@@ -6,7 +6,7 @@
 /*   By: estruckm <estruckm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 13:08:51 by estruckm          #+#    #+#             */
-/*   Updated: 2023/01/23 23:11:23 by estruckm         ###   ########.fr       */
+/*   Updated: 2023/01/25 22:47:51 by estruckm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,26 +21,30 @@
 # include <stdlib.h>
 # include <limits.h>
 
-typedef struct p_list
+typedef struct s_lst
 {
 	int nbr;
-	struct p_list	*next;
-	struct p_list	*last;
-}	p_list;
+	struct s_lst	*next;
+}	t_lst;
 
-typedef struct p_stack
-{
-	int size;
-	struct p_list *top;
-	struct p_list *bottom;
-} p_stack;
+// typedef struct s_stack
+// {
+// 	int size;
+// 	struct s_lst *second_top;
+// 	struct s_lst *top;
+// 	struct s_lst *bottom;
+// } t_stack;
 
 // Hauptfunktion
-
 //Hilfsfunktionen
 
 //Link_List_Funtionen
 
-p_list *ft_push_front(p_list **head_ref, int new_data);
+t_lst *ft_push_front(t_lst **head_ref, int new_data);
+int ft_count_stack(t_lst *head_ref);
+t_lst *ft_second_last(t_lst *head_ref);
+t_lst *ft_last(t_lst *head_ref);
+void ft_add_back(t_lst **head_ref, t_lst *new_node);
+
 
 #endif

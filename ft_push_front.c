@@ -6,7 +6,7 @@
 /*   By: estruckm <estruckm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 15:42:05 by estruckm          #+#    #+#             */
-/*   Updated: 2023/01/23 23:47:50 by estruckm         ###   ########.fr       */
+/*   Updated: 2023/01/25 23:05:53 by estruckm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,34 +23,48 @@
 // 	return (new_node);
 // }
 
-static void	put_node_into_stack_top(p_stack *head_ref, p_list *new_node)
-{
-	new_node->last = NULL;
-	new_node->next = head_ref->top;
-	if (head_ref->size == 0)
-	{
-		head_ref->bottom = new_node;
-	}
-	else
-	{
-		head_ref->top->last = new_node;
-	}
-	head_ref->top = new_node;
-}
+// static void	put_node_into_stack_top(p_stack *head_ref, p_list *new_node)
+// {
+// 	new_node->last = NULL;
+// 	new_node->next = head_ref->top;
+// 	if (head_ref->size == 0)
+// 	{
+// 		head_ref->bottom = new_node;
+// 	}
+// 	else
+// 	{
+// 		head_ref->top->last = new_node;
+// 	}
+// 	head_ref->top = new_node;
+// }
 
-p_list *ft_push_front(p_stack *head_ref, int new_data)
+t_lst *ft_push_front(t_lst **head_ref, int new_data)
 {
-	p_list	*new_node;
+	t_lst	*new_node;
 
-	new_node = (p_list *)malloc(sizeof(p_list));
+	new_node = (t_lst *)malloc(sizeof(t_lst));
+	if (!new_node)
+		return NULL;
 	new_node->nbr = new_data;
-	put_node_into_stack_top(head_ref, new_node);
+	new_node->next = (*head_ref);
+	*head_ref = new_node;
 	return (new_node);
 }
-struct Node {
-    int data;
-    struct Node* next;
-};
+
+// };
+
+// void addNodeToTop(struct Node** head, int data) {
+//     struct Node* newNode = (struct Node*) malloc(sizeof(struct Node));
+//     newNode->data = data;
+//     newNode->next = *head;
+//     newNode->prev = NULL;
+
+//     // If the list is not empty, update the old head's prev pointer
+//     if (*head != NULL) {
+//         (*head)->prev = newNode;
+//     }
+//     *head = newNode;
+// }
 // chat gpt
 // struct Node* second_to_last(struct Node* head) {
 //     struct Node* current = head;
