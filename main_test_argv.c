@@ -6,7 +6,7 @@
 /*   By: estruckm <estruckm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 14:26:43 by estruckm          #+#    #+#             */
-/*   Updated: 2023/01/25 22:49:52 by estruckm         ###   ########.fr       */
+/*   Updated: 2023/01/29 03:11:36 by estruckm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,14 +40,32 @@ int main (int nbr_arg, char **arg)
 		printf("%d ", c->nbr);
 		c = c->next;
 	}
-	printf("\n%d\n", ft_count_stack(*a));
-	printf("%p\n", c = (ft_second_last(*a)));
-	printf("%d\n", c->nbr);
-	printf("%p\n", c = (ft_last(*a)));
-	printf("%d\n", c->nbr);
-	
 
-
+	ft_sa(a);
+	c = *a;
+	printf("\n");
+	while (c)
+	{
+		printf("%d ", c->nbr);
+		c = c->next;
+	}
+	ft_push_b(a, b);
+	ft_push_b(a, b);
+	ft_ss(a, b);
+	c = *a;
+	printf("\n");
+	while (c)
+	{
+		printf("%d ", c->nbr);
+		c = c->next;
+	}
+	c = *b;
+	printf("\n");
+	while (c)
+	{
+		printf("%d ", c->nbr);
+		c = c->next;
+	}
 	return 0;
 }
 

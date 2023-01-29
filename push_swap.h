@@ -6,7 +6,7 @@
 /*   By: estruckm <estruckm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 13:08:51 by estruckm          #+#    #+#             */
-/*   Updated: 2023/01/25 22:47:51 by estruckm         ###   ########.fr       */
+/*   Updated: 2023/01/29 04:11:09 by estruckm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,16 @@ int ft_count_stack(t_lst *head_ref);
 t_lst *ft_second_last(t_lst *head_ref);
 t_lst *ft_last(t_lst *head_ref);
 void ft_add_back(t_lst **head_ref, t_lst *new_node);
+void ft_free_node(t_lst **headref, t_lst *node);
+void ft_pb(t_lst **head_ref_1, t_lst **head_ref_2);
+void ft_pa(t_lst **head_ref_1, t_lst **head_ref_2);
+void ft_sa(t_lst **head_ref);
+void ft_ss(t_lst **head_ref_1, t_lst **head_ref_2);
+void ft_ra(t_lst **head_ref);
+void ft_rb(t_lst **head_ref);
+void ft_rra(t_lst **head_ref);
+void ft_rrb(t_lst **head_ref);
+void ft_rrr(t_lst **head_ref_1, t_lst **head_ref_2);
 
 
 #endif

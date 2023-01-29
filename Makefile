@@ -6,18 +6,29 @@
 #    By: estruckm <estruckm@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/31 13:07:12 by estruckm          #+#    #+#              #
-#    Updated: 2023/01/25 22:48:05 by estruckm         ###   ########.fr        #
+#    Updated: 2023/01/29 03:48:11 by estruckm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	push_swap.a
 # Name des kompilierten Programms
-SRCS	=	ft_element_new.c	\
-			ft_push_front.c		\
+SRCS	=	ft_push_front.c		\
 			ft_count_stack.c	\
 			ft_second_last.c	\
 			ft_last.c			\
-			ft_add_back.c
+			ft_add_back.c		\
+			ft_free_node.c		\
+			ft_pb.c				\
+			ft_pa.c				\
+			ft_sa.c				\
+			ft_sb.c				\
+			ft_ss.c				\
+			ft_ra.c				\
+			ft_rb.c				\
+			ft_rra.c			\
+			ft_rrb.c			\
+			ft_rrr.c			
+
 # Hier alle zu kompilierenden .c-Dateien erfassen
 OBJS	=	${SRCS:.c=.o}
 # Damit nur veränderte .c-Dateien in .o-Dateien kompiliert werden
