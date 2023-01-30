@@ -6,7 +6,7 @@
 /*   By: estruckm <estruckm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 03:12:54 by estruckm          #+#    #+#             */
-/*   Updated: 2023/01/29 03:34:45 by estruckm         ###   ########.fr       */
+/*   Updated: 2023/01/29 23:04:25 by estruckm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,10 @@
 
 void ft_rra(t_lst **head_ref)
 {
-	t_lst *last;
-	t_lst *first;
-	int data_first;
-	int data_last;
+	t_lst *tmp;
 
-	last = ft_last(*head_ref);
-	first = *head_ref;
-	data_last = last->nbr;
-	data_first = first->nbr;
-	first->nbr = data_last;
-	last->nbr = data_first;
+	tmp = *head_ref;
+	*head_ref = (*head_ref)->next;
+	ft_add_back(head_ref, tmp);
 	ft_printf("rra\n");
 }

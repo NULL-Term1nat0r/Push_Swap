@@ -6,7 +6,7 @@
 #    By: estruckm <estruckm@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/31 13:07:12 by estruckm          #+#    #+#              #
-#    Updated: 2023/01/29 03:48:11 by estruckm         ###   ########.fr        #
+#    Updated: 2023/01/29 18:40:02 by estruckm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ SRCS	=	ft_push_front.c		\
 			ft_rb.c				\
 			ft_rra.c			\
 			ft_rrb.c			\
-			ft_rrr.c			
+			ft_rrr.c
 
 # Hier alle zu kompilierenden .c-Dateien erfassen
 OBJS	=	${SRCS:.c=.o}
@@ -58,8 +58,8 @@ compile:
 makelibft:
 			@echo "$(GREEN)Compiling:\n"
 
-			@echo "@     @  @     @  @        @       @ @ @ @ @ @"
-			@echo "@ @   @  @     @  @        @           @     @"
+			@echo "@     @  @     @  @        @       @ @ @ @ @ @@"
+			@echo "@ @   @  @     @  @        @           @     "
 			@echo "@  @  @  @     @  @        @           @     @"
 			@echo "@   @ @  @     @  @        @           @     @"
 			@echo "@     @  @ @ @ @  @ @ @ @  @ @ @ @     @     @\n"

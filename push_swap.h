@@ -6,14 +6,15 @@
 /*   By: estruckm <estruckm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 13:08:51 by estruckm          #+#    #+#             */
-/*   Updated: 2023/01/29 04:11:09 by estruckm         ###   ########.fr       */
+/*   Updated: 2023/01/30 01:08:22 by estruckm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#ifndef FT_PUSH_SWAP_H
+# define FT_PUSH_SWAP_H
 
 # include "./ft_printf/libft/libft.h"
+# include "./ft_printf/ft_printf.h"
 # include <string.h>
 # include <stdio.h>
 # include <unistd.h>
@@ -26,14 +27,6 @@ typedef struct s_lst
 	int nbr;
 	struct s_lst	*next;
 }	t_lst;
-
-// typedef struct s_stack
-// {
-// 	int size;
-// 	struct s_lst *second_top;
-// 	struct s_lst *top;
-// 	struct s_lst *bottom;
-// } t_stack;
 
 // Hauptfunktion
 //Hilfsfunktionen
