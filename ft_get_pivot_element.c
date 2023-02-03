@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rra.c                                           :+:      :+:    :+:   */
+/*   ft_get_pivot_element.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: estruckm <estruckm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/29 03:12:54 by estruckm          #+#    #+#             */
-/*   Updated: 2023/02/03 22:31:13 by estruckm         ###   ########.fr       */
+/*   Created: 2023/02/03 20:24:46 by estruckm          #+#    #+#             */
+/*   Updated: 2023/02/03 21:48:18 by estruckm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void ft_rra(t_lst **head_ref)
+int ft_get_pivot_element(t_lst **head_ref)
 {
-	t_lst *tmp;
+	t_lst *slow;
+	t_lst *fast;
 
-	tmp = *head_ref;
-	*head_ref = (*head_ref)->next;
-	ft_add_back(head_ref, tmp);
-	ft_printf("rra\n");
+	slow = *head_ref;
+	fast = *head_ref;
+	while (fast != NULL && fast->next != NULL)
+	{
+		slow = slow->next;
+		fast = fast->next->next;
+	}
+	return slow->nbr;
 }

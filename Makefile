@@ -6,7 +6,7 @@
 #    By: estruckm <estruckm@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/31 13:07:12 by estruckm          #+#    #+#              #
-#    Updated: 2023/01/29 18:40:02 by estruckm         ###   ########.fr        #
+#    Updated: 2023/02/03 22:06:22 by estruckm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,9 @@ SRCS	=	ft_push_front.c		\
 			ft_rb.c				\
 			ft_rra.c			\
 			ft_rrb.c			\
-			ft_rrr.c
+			ft_rrr.c			\
+			ft_sort_stack.c		\
+			ft_get_pivot_element.c
 
 # Hier alle zu kompilierenden .c-Dateien erfassen
 OBJS	=	${SRCS:.c=.o}

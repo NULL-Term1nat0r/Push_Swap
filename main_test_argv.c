@@ -6,82 +6,53 @@
 /*   By: estruckm <estruckm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 14:26:43 by estruckm          #+#    #+#             */
-/*   Updated: 2023/01/30 01:08:11 by estruckm         ###   ########.fr       */
+/*   Updated: 2023/02/03 23:03:34 by estruckm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <xlocale.h>
 
-static int get_middle_element(t_lst **head_ref, int size)
+static int get_arguments(t_lst **a, int nbr_arg, char **arg, int size)
 {
-	int i;
-
-	int tmp;
-	t_lst *head;
-
-	i = 0;
-	head = *head_ref;
-	while (i <= size/2)
+	while (--nbr_arg != 0)
 	{
-		head = *head_ref;
-		while (head->next != NULL)
-		{
-			if (head->nbr > head->next->nbr)
-			{
-				tmp = head->next->nbr;
-				head->next->nbr = head->nbr;
-				head->nbr = tmp;
-			}
-			if (i == size/2)
-				return (head->nbr);
-			head = head->next;
-		}
-		*head_ref = (*head_ref)->next;
-		i++;
+		ft_push_front(a, ft_atoi(arg[nbr_arg]));
+		size++;
 	}
-	return 0;
-}
+	return (size);
 
-static void get_arguments(t_lst **a, int nbr_arg, char **arg)
-{
-	int i;
-
-	i = 0;
-	while (arg[++i] != 0)
-		ft_push_front(a, ft_atoi(arg[i]));
 }
 
 int main (int nbr_arg, char **arg)
 {
 	t_lst **a;
 	t_lst **b;
-	int size;
+	int size_A;
+	int size_B;
+	t_lst *c;
 	a = (t_lst**)malloc(sizeof(t_lst));
 	b = (t_lst**)malloc(sizeof(t_lst));
-	size = 0;
-	t_lst *c;
+	size_A = get_arguments(a, nbr_arg, arg, size_A);
+	size_B = nbr_arg - size_A;
 
-	get_arguments(a, nbr_arg, arg);
+	ft_sort_stack(a, b, size_A, size_B);
+	// printf("\n%d", ft_get_pivot_element(a));
 	c = *a;
+
 	while (c)
 	{
 		printf("%d ", c->nbr);
 		c = c->next;
 	}
-
-	// printf("\n%d", get_middle_element(a, nbr_arg - 1));
-
-	ft_rra(a);
-	c = *a;
 	printf("\n");
+	c = *b;
 	while (c)
 	{
 		printf("%d ", c->nbr);
 		c = c->next;
 	}
+
+
 
 	return 0;
 }
