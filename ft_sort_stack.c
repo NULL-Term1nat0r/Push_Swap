@@ -6,7 +6,7 @@
 /*   By: estruckm <estruckm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 17:52:44 by estruckm          #+#    #+#             */
-/*   Updated: 2023/02/03 23:21:09 by estruckm         ###   ########.fr       */
+/*   Updated: 2023/02/04 23:52:00 by estruckm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,13 +64,13 @@ static void ft_sort_small(t_lst **head_ref, int nbr_elements)
 		ft_sort_small_elements(head_ref, first, middle, last);
 	}
 }
-int ft_sort_stack(t_lst **stack_A, t_lst **stack_B, int size_A, int size_B)
+static int ft_sort_stack_chunk(t_lst **stack_A, t_lst **stack_B, int size_A, int pivot_element)
 {
 	int pivot_element;
 	t_lst *last;
 
+
 	last = ft_last(*stack_A);
-	pivot_element = ft_get_pivot_element(stack_A);
 	if (size_A <= 3)
 	{
 		ft_sort_small(stack_A, size_A);
@@ -81,12 +81,24 @@ int ft_sort_stack(t_lst **stack_A, t_lst **stack_B, int size_A, int size_B)
 		{
 			ft_pb(stack_A, stack_B);
 			size_A--;
-			size_B++;
 		}
 		if (last->nbr > pivot_element)
 			ft_ra(stack_A);
-		ft_sort_stack(stack_A, stack_B, size_A, size_B);
+		ft_sort_stack(stack_A, stack_B, size_A);
 	}
 
 	return (size_A);
+}
+
+void ft_sort_stack_main(t_lst **stack_A, t_lst **stack_B, int size_A)
+{
+	int pivot_element;
+	int size_A;
+
+	pivot_element = ft_get_pivot_element(stack_A);
+	size_A = ft_sort_stack_chunk(stack_A, stack_B, size_A, pivot_element);
+	if ()
+
+
+
 }

@@ -6,7 +6,7 @@
 /*   By: estruckm <estruckm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 13:08:51 by estruckm          #+#    #+#             */
-/*   Updated: 2023/02/03 23:03:46 by estruckm         ###   ########.fr       */
+/*   Updated: 2023/02/04 23:43:01 by estruckm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,5 @@ void ft_rrb(t_lst **head_ref);
 void ft_rrr(t_lst **head_ref_1, t_lst **head_ref_2);
 
 //sorting function
-int ft_sort_stack(t_lst **stack_A, t_lst **stack_B, int size_A, int size_B);
+int ft_sort_stack_main(t_lst **stack_A, t_lst **stack_B);
 #endif

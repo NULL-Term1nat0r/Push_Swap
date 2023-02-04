@@ -6,7 +6,7 @@
 /*   By: estruckm <estruckm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 14:26:43 by estruckm          #+#    #+#             */
-/*   Updated: 2023/02/03 23:03:34 by estruckm         ###   ########.fr       */
+/*   Updated: 2023/02/04 20:12:55 by estruckm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ int main (int nbr_arg, char **arg)
 	size_A = get_arguments(a, nbr_arg, arg, size_A);
 	size_B = nbr_arg - size_A;
 
+	printf("\n%d\n", ft_get_pivot_element(a));
+	
 	ft_sort_stack(a, b, size_A, size_B);
 	// printf("\n%d", ft_get_pivot_element(a));
 	c = *a;
@@ -46,12 +48,12 @@ int main (int nbr_arg, char **arg)
 	}
 	printf("\n");
 	c = *b;
-	while (c)
+while (c)
 	{
 		printf("%d ", c->nbr);
 		c = c->next;
 	}
-
+	printf("\n%d\n", ft_get_pivot_element(a));
 
 
 	return 0;
