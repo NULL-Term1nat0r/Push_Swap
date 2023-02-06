@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rb.c                                            :+:      :+:    :+:   */
+/*   ft_index.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: estruckm <estruckm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/29 03:12:54 by estruckm          #+#    #+#             */
-/*   Updated: 2023/02/05 16:44:07 by estruckm         ###   ########.fr       */
+/*   Created: 2023/02/05 16:46:49 by estruckm          #+#    #+#             */
+/*   Updated: 2023/02/05 16:48:08 by estruckm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void ft_ra(t_lst **head_ref)
+void ft_index(t_lst *head_ref, int index)
 {
-	t_lst *last;
-	t_lst *second_last;
-	t_lst *first;
-
-	last = ft_last(*head_ref);
-	second_last = ft_second_last(*head_ref);
-	first = *head_ref;
-	*head_ref = last;
-	last->next = first;
-	second_last->next = NULL;
-	ft_printf("rb\n");
+	head_ref->index = index;
 }

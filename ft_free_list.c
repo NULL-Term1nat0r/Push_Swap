@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rb.c                                            :+:      :+:    :+:   */
+/*   ft_free_list.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: estruckm <estruckm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/29 03:12:54 by estruckm          #+#    #+#             */
-/*   Updated: 2023/02/05 16:44:07 by estruckm         ###   ########.fr       */
+/*   Created: 2023/02/05 17:19:16 by estruckm          #+#    #+#             */
+/*   Updated: 2023/02/05 23:41:47 by estruckm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void ft_ra(t_lst **head_ref)
+void ft_free_list(t_lst **head_ref)
 {
-	t_lst *last;
-	t_lst *second_last;
-	t_lst *first;
-
-	last = ft_last(*head_ref);
-	second_last = ft_second_last(*head_ref);
-	first = *head_ref;
-	*head_ref = last;
-	last->next = first;
-	second_last->next = NULL;
-	ft_printf("rb\n");
+  t_lst *temp;
+  while ((*head_ref) != NULL)
+  {
+	temp = (*head_ref);
+	(*head_ref) = (*head_ref)->next;
+	free(temp);
+  }
 }

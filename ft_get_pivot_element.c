@@ -6,24 +6,41 @@
 /*   By: estruckm <estruckm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 20:24:46 by estruckm          #+#    #+#             */
-/*   Updated: 2023/02/04 20:58:32 by estruckm         ###   ########.fr       */
+/*   Updated: 2023/02/06 00:05:10 by estruckm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-static void ft_cpy_link_list(t_lst **head_ref, t_lst **c, int size)
+static void print_List(t_lst **head_ref)
 {
 	t_lst *tmp;
 
 	tmp = *head_ref;
-		while (size != 0)
-		{
-			ft_push_front(c, (*head_ref)->nbr);
-			size--;
-			(*head_ref) = (*head_ref)->next;
-		}
+	while ((*head_ref) != NULL)
+	{
+		printf("%d ", (*head_ref)->nbr);
+		*head_ref = (*head_ref)->next;
+	}
+	printf("\n");
 	*head_ref = tmp;
+	return;
+}
+static void ft_cpy_link_list(t_lst **head_ref, t_lst **c)
+{
+	t_lst *tmp;
+
+	printf("Beforey\n");
+	tmp = *head_ref;
+	printf("%p\n", tmp);
+		while (tmp != NULL)
+		{
+			ft_push_front(c, (tmp)->nbr);
+			printf("%p\n", tmp);
+			(tmp) = (tmp)->next;
+			// printf("%p\n", tmp);
+
+		}
+		printf("still here");
 }
 static void ft_sort_link_list(t_lst **head_ref)
 {
@@ -69,9 +86,23 @@ static int ft_get_middle_element(t_lst **head_ref)
 int ft_get_pivot_element(t_lst **head_ref)
 {
 	t_lst **c;
-
-	c = (t_lst**)malloc(sizeof(t_lst));
-	ft_cpy_link_list(head_ref, c, ft_count_stack(*head_ref));
+	printf("%p AFTER\n", c);
+	int middle_element;
+	printf("test1\n");
+	c = (t_lst**)malloc(sizeof(t_lst**));
+	printf("%p\n", *c);
+	*c = NULL;
+	printf("test2\n");
+	ft_cpy_link_list(head_ref, c);
+	print_List(c);
+	printf("test3\n");
 	ft_sort_link_list(c);
-	return (ft_get_middle_element(c));
+	printf("test4\n");
+	middle_element = ft_get_middle_element(c);
+	printf("test5\n");
+	ft_free_list(c);
+	printf("test6\n");
+	printf("%p BEFORE\n", c);
+	// free(c);
+	return (middle_element);
 }
