@@ -6,7 +6,7 @@
 /*   By: estruckm <estruckm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 15:42:05 by estruckm          #+#    #+#             */
-/*   Updated: 2023/02/05 16:38:18 by estruckm         ###   ########.fr       */
+/*   Updated: 2023/02/06 16:10:35 by estruckm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@
 // 	head_ref->top = new_node;
 // }
 
-t_lst *ft_push_front(t_lst **head_ref, int new_data)
+t_lst *ft_push_front(t_lst **head_ref, int new_data, int index)
 {
 	t_lst	*new_node;
 
@@ -46,7 +46,7 @@ t_lst *ft_push_front(t_lst **head_ref, int new_data)
 	if (!new_node)
 		return NULL;
 	new_node->nbr = new_data;
-	new_node->index = 1;
+	new_node->index = index;
 	new_node->next = (*head_ref);
 	*head_ref = new_node;
 	return (new_node);

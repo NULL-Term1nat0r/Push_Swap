@@ -6,13 +6,13 @@
 /*   By: estruckm <estruckm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/29 03:12:54 by estruckm          #+#    #+#             */
-/*   Updated: 2023/02/05 16:44:07 by estruckm         ###   ########.fr       */
+/*   Updated: 2023/02/06 21:25:44 by estruckm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void ft_ra(t_lst **head_ref)
+void ft_rb(t_lst **head_ref)
 {
 	t_lst *last;
 	t_lst *second_last;

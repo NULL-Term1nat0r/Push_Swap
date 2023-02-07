@@ -6,7 +6,7 @@
 /*   By: estruckm <estruckm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 13:08:51 by estruckm          #+#    #+#             */
-/*   Updated: 2023/02/05 18:13:12 by estruckm         ###   ########.fr       */
+/*   Updated: 2023/02/06 23:08:54 by estruckm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,15 +36,16 @@ typedef struct stack
 }	stack;
 //Link_List_functions
 
-t_lst *ft_push_front(t_lst **head_ref, int new_data);
+t_lst *ft_push_front(t_lst **head_ref, int new_data, int index);
 int ft_count_stack(t_lst *head_ref);
 t_lst *ft_second_last(t_lst *head_ref);
 t_lst *ft_last(t_lst *head_ref);
 void ft_add_back(t_lst **head_ref, t_lst *new_node);
 void ft_free_node(t_lst **headref, t_lst *node);
-int ft_get_pivot_element(t_lst **head_ref);
-void ft_index(t_lst *head_ref, int index);
+int ft_get_pivot_element(t_lst **head_ref, int index);
+int ft_index(t_lst **head_ref);
 void ft_free_list(t_lst **head_ref);
+int ft_index_check(t_lst **head_refl, int index);
 
 //Actions
 
@@ -60,5 +61,5 @@ void ft_rrr(t_lst **head_ref_1, t_lst **head_ref_2);
 
 //sorting function
 void ft_sort_stack_main(t_lst **stack_A, t_lst **stack_B);
-void ft_sort_stack_chunk(t_lst **stack_A, t_lst **stack_B, int count, int pivot_element);
+// void ft_sort_stack_chunk(t_lst **stack_A, t_lst **stack_B, int pivot_element);
 #endif

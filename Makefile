@@ -6,7 +6,7 @@
 #    By: estruckm <estruckm@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/31 13:07:12 by estruckm          #+#    #+#              #
-#    Updated: 2023/02/05 23:54:17 by estruckm         ###   ########.fr        #
+#    Updated: 2023/02/06 21:49:29 by estruckm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,8 @@ SRCS	=	ft_push_front.c		\
 			ft_sort_stack.c		\
 			ft_get_pivot_element.c \
 			ft_index.c			\
-			ft_free_list.c
+			ft_free_list.c		\
+			ft_check_index.c
 
 # Hier alle zu kompilierenden .c-Dateien erfassen
 OBJS	=	${SRCS:.c=.o}
@@ -43,8 +44,9 @@ RM		=	rm -f
 # -f (force) macht fclean jederzeit ausführbar (auch ohne .o-Dateien)
 CC		=	cc
 # Kompiliersprache
-CFLAGS	=
-#-Wall -Wextra -Werror
+CFLAGS	= -Wall -Wextra -Werror
+
+DEBUGGER = -g
 
 MAIN = main_test_argv.c
 
@@ -58,7 +60,7 @@ ${NAME}:	makelibft ${OBJS}
 			ar rcs ${NAME} ${OBJS}
 
 compile:
-			$(CC) $(MAIN) $(NAME)
+			$(CC) $(MAIN) $(SRCS) $(NAME) $(DEBUGGER)
 
 makelibft:
 			@echo "$(GREEN)Compiling:\n"
@@ -83,3 +85,5 @@ re:			fclean all
 # Löscht und rekompiliert
 .PHONY:		all clean fclean re
 # Führt die Befehle aus, auch wenn eine gleichnamige Datei existiert
+easy: 		makelibft clean
+			$(CC) $(MAIN) $(SRCS) $(NAME) $(DEBUGGER)
