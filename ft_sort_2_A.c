@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_add_back.c                                      :+:      :+:    :+:   */
+/*   ft_sort_2_A.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: estruckm <estruckm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/25 18:59:49 by estruckm          #+#    #+#             */
-/*   Updated: 2023/02/08 21:15:45 by estruckm         ###   ########.fr       */
+/*   Created: 2023/02/08 17:59:25 by estruckm          #+#    #+#             */
+/*   Updated: 2023/02/08 20:56:06 by estruckm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void ft_add_back(t_lst **head_ref, t_lst *new_node)
+void ft_sort_2_A(t_lst **head_ref)
 {
-	t_lst	*tmp;
+	t_lst *last;
+	t_lst *second_last;
 
-	if (*head_ref == NULL)
+	last = ft_last(*head_ref);
+	second_last = ft_second_last(*head_ref);
+
+	last->index = -1;
+	second_last->index = -1;
+
+	if (last->nbr > second_last->nbr)
 	{
-		*head_ref = new_node;
-		new_node-> next = NULL;
-		return;
+		ft_sa(head_ref);
 	}
-	tmp = ft_last(*head_ref);
-	tmp->next = new_node;
-	new_node-> next = NULL;
+	else
+		return;
 }

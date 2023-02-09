@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_add_back.c                                      :+:      :+:    :+:   */
+/*   ft_check_if_sorted.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: estruckm <estruckm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/25 18:59:49 by estruckm          #+#    #+#             */
-/*   Updated: 2023/02/08 21:15:45 by estruckm         ###   ########.fr       */
+/*   Created: 2023/02/08 16:15:17 by estruckm          #+#    #+#             */
+/*   Updated: 2023/02/08 19:21:17 by estruckm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void ft_add_back(t_lst **head_ref, t_lst *new_node)
+int ft_check_if_sorted(t_lst **stack_A, int count_stack)
 {
-	t_lst	*tmp;
+	t_lst *tmp;
 
-	if (*head_ref == NULL)
+	tmp = *stack_A;
+	while (count_stack - 1 != 0 && tmp->next > tmp)
 	{
-		*head_ref = new_node;
-		new_node-> next = NULL;
-		return;
+		tmp = tmp->next;
+		count_stack--;
 	}
-	tmp = ft_last(*head_ref);
-	tmp->next = new_node;
-	new_node-> next = NULL;
+	if (count_stack == 0)
+		return (0);
+	else
+		return (1);
 }

@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_add_back.c                                      :+:      :+:    :+:   */
+/*   ft_sort_2_B.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: estruckm <estruckm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/25 18:59:49 by estruckm          #+#    #+#             */
-/*   Updated: 2023/02/08 21:15:45 by estruckm         ###   ########.fr       */
+/*   Created: 2023/02/08 17:59:25 by estruckm          #+#    #+#             */
+/*   Updated: 2023/02/08 21:06:43 by estruckm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void ft_add_back(t_lst **head_ref, t_lst *new_node)
+void ft_sort_2_B(t_lst **stack_A, t_lst **stack_B)
 {
-	t_lst	*tmp;
+	t_lst *last;
+	t_lst *second_last;
 
-	if (*head_ref == NULL)
-	{
-		*head_ref = new_node;
-		new_node-> next = NULL;
-		return;
-	}
-	tmp = ft_last(*head_ref);
-	tmp->next = new_node;
-	new_node-> next = NULL;
+	last = ft_last(*stack_B);
+	second_last = ft_second_last(*stack_B);
+
+	if (last->nbr > second_last->nbr)
+		ft_sb(stack_B);
+	// last->index = -1;
+	// second_last->index = -1;
+	ft_pa(stack_A, stack_B);
+	ft_pa(stack_A, stack_B);
 }

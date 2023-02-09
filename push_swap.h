@@ -6,7 +6,7 @@
 /*   By: estruckm <estruckm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 13:08:51 by estruckm          #+#    #+#             */
-/*   Updated: 2023/02/06 23:08:54 by estruckm         ###   ########.fr       */
+/*   Updated: 2023/02/09 01:05:49 by estruckm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,6 @@ typedef struct s_lst
 	struct s_lst	*next;
 }	t_lst;
 
-typedef struct stack
-{
-	int size;
-}	stack;
 //Link_List_functions
 
 t_lst *ft_push_front(t_lst **head_ref, int new_data, int index);
@@ -42,16 +38,18 @@ t_lst *ft_second_last(t_lst *head_ref);
 t_lst *ft_last(t_lst *head_ref);
 void ft_add_back(t_lst **head_ref, t_lst *new_node);
 void ft_free_node(t_lst **headref, t_lst *node);
-int ft_get_pivot_element(t_lst **head_ref, int index);
+int ft_get_pivot_element(t_lst **head_ref);
 int ft_index(t_lst **head_ref);
 void ft_free_list(t_lst **head_ref);
-int ft_index_check(t_lst **head_refl, int index);
+int ft_check_index(t_lst **head_ref);
+int ft_check_if_sorted(t_lst **stack_A, int count_stack);
 
 //Actions
 
 void ft_pb(t_lst **head_ref_1, t_lst **head_ref_2);
 void ft_pa(t_lst **head_ref_1, t_lst **head_ref_2);
 void ft_sa(t_lst **head_ref);
+void ft_sb(t_lst **head_ref);
 void ft_ss(t_lst **head_ref_1, t_lst **head_ref_2);
 void ft_ra(t_lst **head_ref);
 void ft_rb(t_lst **head_ref);
@@ -60,6 +58,9 @@ void ft_rrb(t_lst **head_ref);
 void ft_rrr(t_lst **head_ref_1, t_lst **head_ref_2);
 
 //sorting function
-void ft_sort_stack_main(t_lst **stack_A, t_lst **stack_B);
+void ft_sort_stack_main(t_lst **stack_A, t_lst **stack_B, int size_A);
+void ft_sort_stack_A(t_lst **stack_A, t_lst **stack_B);
+void ft_sort_2_A(t_lst **head_ref);
+void ft_sort_2_B(t_lst **stack_A, t_lst **stack_B);
 // void ft_sort_stack_chunk(t_lst **stack_A, t_lst **stack_B, int pivot_element);
 #endif
