@@ -5,20 +5,33 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: estruckm <estruckm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/23 17:27:06 by estruckm          #+#    #+#             */
-/*   Updated: 2023/02/03 22:31:43 by estruckm         ###   ########.fr       */
+/*   Created: 2023/01/16 14:53:31 by vziegler          #+#    #+#             */
+/*   Updated: 2023/02/18 22:16:30 by estruckm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void ft_pb(t_lst **head_ref_1, t_lst **head_ref_2)
+void	ft_pb(t_lst **a, t_lst **b, t_lst *stack)
 {
-	t_lst	*tmp;
+	t_lst *tmp_a;
+	t_lst *tmp_b;
 
-	tmp = ft_last(*head_ref_1);
-	ft_add_back(head_ref_2, tmp);
-	ft_second_last(*head_ref_1)->next = NULL;
-	// ft_free_node(head_ref_1, tmp);
+	tmp_b = (*b);
+	tmp_a = (*a);
+	stack->size_a--;
+	stack->size_b++;
+	if (*b == NULL)
+	{
+		*a = (*a)->next;
+		*b = tmp_a;
+		tmp_a->next = NULL;
+	}
+	else
+	{
+		*a = (*a)->next;
+		*b = tmp_a;
+		tmp_a->next = tmp_b;
+	}
 	ft_printf("pb\n");
 }

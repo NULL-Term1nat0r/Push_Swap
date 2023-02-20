@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_add_back.c                                      :+:      :+:    :+:   */
+/*   ft_sort.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: estruckm <estruckm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/25 18:59:49 by estruckm          #+#    #+#             */
-/*   Updated: 2023/02/08 21:15:45 by estruckm         ###   ########.fr       */
+/*   Created: 2023/01/16 11:35:37 by vziegler          #+#    #+#             */
+/*   Updated: 2023/02/16 23:22:54 by estruckm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void ft_add_back(t_lst **head_ref, t_lst *new_node)
+void	ft_sort(t_lst **a, t_lst **b, t_lst *stack, int int_count)
 {
-	t_lst	*tmp;
-
-	if (*head_ref == NULL)
+	if (ft_check_sort(a, stack->size_a, 0) == 0)
 	{
-		*head_ref = new_node;
-		new_node-> next = NULL;
-		return;
+		if (int_count == 2)
+			ft_sa(a);
+		else if (int_count == 3)
+			ft_sort_three_a(a);
+		else
+			ft_quicksort_a(a, b, stack, int_count, 0);
 	}
-	tmp = ft_last(*head_ref);
-	tmp->next = new_node;
-	new_node-> next = NULL;
 }

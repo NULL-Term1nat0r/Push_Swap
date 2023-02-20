@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_2_A.c                                      :+:      :+:    :+:   */
+/*   ft_return.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: estruckm <estruckm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/08 17:59:25 by estruckm          #+#    #+#             */
-/*   Updated: 2023/02/08 20:56:06 by estruckm         ###   ########.fr       */
+/*   Created: 2023/01/17 13:26:56 by vziegler          #+#    #+#             */
+/*   Updated: 2023/02/19 00:17:49 by estruckm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void ft_sort_2_A(t_lst **head_ref)
+int	ft_return(t_lst *stack, int items)
 {
-	t_lst *last;
-	t_lst *second_last;
-
-	last = ft_last(*head_ref);
-	second_last = ft_second_last(*head_ref);
-
-	last->index = -1;
-	second_last->index = -1;
-
-	if (last->nbr > second_last->nbr)
+	if (ft_quicksort_a(&stack->a, &stack->b, stack, items / 2 + items % 2, 0))
 	{
-		ft_sa(head_ref);
+		if (ft_quicksort_b(&stack->a, &stack->b, stack, items / 2, 0))
+		{
+			return (1);
+		}
 	}
-	else
-		return;
+	return (0);
 }
+
+// Die und-Bedingung wäre für norminette zu lang als return-Wert.

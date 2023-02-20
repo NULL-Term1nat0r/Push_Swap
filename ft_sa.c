@@ -5,23 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: estruckm <estruckm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/29 00:18:36 by estruckm          #+#    #+#             */
-/*   Updated: 2023/02/03 22:31:23 by estruckm         ###   ########.fr       */
+/*   Created: 2023/01/16 12:12:10 by vziegler          #+#    #+#             */
+/*   Updated: 2023/02/19 18:06:50 by estruckm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void ft_sa(t_lst **head_ref)
+void	ft_sa(t_lst **s)
 {
-	t_lst *second_last;
-	int data_second_last;
-	int data_last;
+	int tmp_nbr;
 
-	second_last = ft_second_last(*head_ref);
-	data_second_last = second_last->nbr;
-	data_last = second_last->next->nbr;
-	second_last->nbr = data_last;
-	second_last->next->nbr = data_second_last;
+	tmp_nbr = (*s)->next->nbr;
+	(*s)->next->nbr = (*s)->nbr;
+	(*s)->nbr = tmp_nbr;
 	ft_printf("sa\n");
 }

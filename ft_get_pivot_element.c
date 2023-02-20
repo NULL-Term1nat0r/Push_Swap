@@ -6,7 +6,7 @@
 /*   By: estruckm <estruckm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 20:24:46 by estruckm          #+#    #+#             */
-/*   Updated: 2023/02/09 01:13:40 by estruckm         ###   ########.fr       */
+/*   Updated: 2023/02/16 22:33:06 by estruckm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,19 +25,19 @@ static void print_List(t_lst **head_ref)
 	*head_ref = tmp;
 	return;
 }
-static void ft_cpy_link_list(t_lst **head_ref, t_lst **c)
+static int ft_cpy_link_list(t_lst **head, t_lst **c)
 {
 	t_lst *tmp;
-	int index;
 
-	index = ft_last(*head_ref)->index;
 
-	tmp = *head_ref;
-		while (tmp != NULL && tmp->index == index)
+	tmp = *head;
+		while (tmp != NULL )
 		{
-			ft_push_front(c, (tmp)->nbr, (tmp)->index);
+			if (ft_push_front(c, (tmp)->nbr) == 0)
+				return 0;
 			(tmp) = (tmp)->next;
 		}
+	return 1;
 }
 static void ft_sort_link_list(t_lst **head_ref)
 {
@@ -73,7 +73,6 @@ static int ft_get_middle_element(t_lst **head_ref)
 
 	tmp = *head_ref;
 	count_stack = ft_count_stack(*head_ref) / 2;
-
 	while (count_stack != 0)
 	{
 		tmp = tmp->next;
@@ -81,18 +80,18 @@ static int ft_get_middle_element(t_lst **head_ref)
 	}
 	return (tmp->nbr);
 }
-int ft_get_pivot_element(t_lst **head_ref)
+int ft_get_pivot_element(t_lst **head, int *pivot)
 {
 	t_lst *c;
 
 	// c = (t_lst**)malloc(sizeof(t_lst**));
 	c = NULL;
-	ft_cpy_link_list(head_ref, &c);
-	print_List(&c);
+	if (ft_cpy_link_list(head, &c) == 0)
+		return 0;
 	ft_sort_link_list(&c);
+	*pivot = ft_get_middle_element(&c);
 
 	// ft_free_list(c);
 	// free(c);
-	printf("%d\n", ft_get_middle_element(&c));
-	return (ft_get_middle_element(&c));
+	return (1);
 }

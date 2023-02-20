@@ -5,19 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: estruckm <estruckm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/28 23:52:44 by estruckm          #+#    #+#             */
-/*   Updated: 2023/02/08 22:28:11 by estruckm         ###   ########.fr       */
+/*   Created: 2023/01/16 15:21:53 by vziegler          #+#    #+#             */
+/*   Updated: 2023/02/18 22:16:25 by estruckm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void ft_pa(t_lst **head_ref_1, t_lst **head_ref_2)
+void	ft_pa(t_lst **a, t_lst **b, t_lst *stack)
 {
-	t_lst	*tmp;
+	t_lst *tmp_a;
+	t_lst *tmp_b;
 
-	tmp = ft_last(*head_ref_2);
-	ft_add_back(head_ref_1, tmp);
-	ft_second_last(*head_ref_2)->next = NULL;
+	tmp_b = (*b);
+	tmp_a = (*a);
+	stack->size_a++;
+	stack->size_b--;
+
+	*b = (*b)->next;
+	*a = tmp_b;
+	tmp_b->next = tmp_a;
 	ft_printf("pa\n");
 }
+
+//Stapel A wird nach unten verschoben, Stapel B nach oben.

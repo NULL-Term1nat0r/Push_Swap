@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_index.c                                         :+:      :+:    :+:   */
+/*   ft_count_arg.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: estruckm <estruckm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/05 16:46:49 by estruckm          #+#    #+#             */
-/*   Updated: 2023/02/06 20:00:01 by estruckm         ###   ########.fr       */
+/*   Created: 2023/01/14 19:01:45 by vziegler          #+#    #+#             */
+/*   Updated: 2023/02/20 19:01:52 by estruckm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int ft_index(t_lst **head_ref)
+int	ft_count_arg(char **argv)
 {
-	t_lst *last;
+	int	i;
 
-	last = ft_last(*head_ref);
-	return (last->index);
+	i = 0;
+	while (*argv++)
+		i++;
+	return (i);
 }
