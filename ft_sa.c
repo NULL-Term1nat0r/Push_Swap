@@ -6,7 +6,7 @@
 /*   By: estruckm <estruckm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 12:12:10 by vziegler          #+#    #+#             */
-/*   Updated: 2023/02/19 18:06:50 by estruckm         ###   ########.fr       */
+/*   Updated: 2023/02/22 01:40:55 by estruckm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	ft_sa(t_lst **s)
 {
-	int tmp_nbr;
+	int	tmp_nbr;
 
 	tmp_nbr = (*s)->next->nbr;
 	(*s)->next->nbr = (*s)->nbr;
 	(*s)->nbr = tmp_nbr;
-	ft_printf("sa\n");
+	ft_printf("\033[31msa\033[0m\n");
 }

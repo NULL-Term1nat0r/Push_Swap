@@ -6,15 +6,15 @@
 /*   By: estruckm <estruckm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 18:09:53 by estruckm          #+#    #+#             */
-/*   Updated: 2023/01/25 18:19:58 by estruckm         ###   ########.fr       */
+/*   Updated: 2023/02/21 02:18:24 by estruckm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int ft_count_stack(t_lst *head_ref)
+int	ft_count_stack(t_lst *head_ref)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (head_ref != NULL)

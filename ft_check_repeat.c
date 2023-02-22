@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: estruckm <estruckm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/14 22:31:54 by vziegler          #+#    #+#             */
-/*   Updated: 2023/02/20 15:57:59 by estruckm         ###   ########.fr       */
+/*   Created: 2023/02/21 20:25:37 by estruckm          #+#    #+#             */
+/*   Updated: 2023/02/21 20:25:41 by estruckm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 void	ft_check_repeat(t_lst **stack)
 {
-	t_lst *tmp_1;
-	t_lst *tmp_2;
+	t_lst	*tmp_1;
+	t_lst	*tmp_2;
 
 	tmp_1 = *stack;
 	if (tmp_1 == NULL)
-		return;
+		return ;
 	while (tmp_1->next != NULL)
 	{
 		tmp_2 = tmp_1;

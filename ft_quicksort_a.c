@@ -6,38 +6,39 @@
 /*   By: estruckm <estruckm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 13:38:55 by vziegler          #+#    #+#             */
-/*   Updated: 2023/02/20 15:12:47 by estruckm         ###   ########.fr       */
+/*   Updated: 2023/02/22 02:15:17 by estruckm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_quicksort_a(t_lst **a, t_lst **b, t_lst *stack, int int_count, int rev)
+int	ft_quicksort_a(t_lst *stack, int int_count, int rev)
 {
-	int	pivot;
 	int	items;
+	int pivot;
 
 	pivot = 0;
 	items = int_count;
-	if (ft_check_sort(a, int_count, 0) == 1)
+	if (ft_check_sort(&stack->a, int_count, 0) == 1)
 		return (1);
 	if (int_count <= 3)
 	{
-		ft_sort_small_a(a, b, int_count, stack);
+		ft_sort_small_a(int_count, stack);
 		return (1);
 	}
-	if (!ft_get_pivot_element(a, &pivot))
+		if (!ft_get_pivot_element(&stack->a, &pivot, int_count))
 		return (0);
-
+	printf("median_a: %d\n", pivot);
 	while (int_count != items / 2 + items % 2)
 	{
-		if ((*a)->nbr < pivot && int_count--)
-			ft_pb(a, b, stack);
+		if (stack->a->nbr < pivot && int_count--)
+			ft_pb(&stack->a, &stack->b, stack);
 		else if (++rev)
-			ft_ra(a);
+			ft_ra(&stack->a);
 	}
+	ft_print_list(&stack->a);
 	while (items / 2 + items % 2 != stack->size_a && rev--)
-		ft_rra(a);
+		ft_rra(&stack->a);
 	return (ft_return(stack, items));
 }
 

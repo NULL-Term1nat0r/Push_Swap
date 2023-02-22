@@ -6,7 +6,7 @@
 /*   By: estruckm <estruckm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 15:52:38 by vziegler          #+#    #+#             */
-/*   Updated: 2023/02/18 22:15:54 by estruckm         ###   ########.fr       */
+/*   Updated: 2023/02/22 01:41:56 by estruckm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	ft_sb(t_lst **s)
 {
-	int tmp_nbr;
+	int	tmp_nbr;
 
 	tmp_nbr = (*s)->next->nbr;
 	(*s)->next->nbr = (*s)->nbr;
 	(*s)->nbr = tmp_nbr;
-	ft_printf("sb\n");
+	ft_printf("\033[32msb\033[0m\n");
 }

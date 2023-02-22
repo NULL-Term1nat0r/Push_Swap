@@ -6,7 +6,7 @@
 /*   By: estruckm <estruckm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 14:53:31 by vziegler          #+#    #+#             */
-/*   Updated: 2023/02/18 22:16:30 by estruckm         ###   ########.fr       */
+/*   Updated: 2023/02/22 01:38:49 by estruckm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_pb(t_lst **a, t_lst **b, t_lst *stack)
 {
-	t_lst *tmp_a;
-	t_lst *tmp_b;
+	t_lst	*tmp_a;
+	t_lst	*tmp_b;
 
 	tmp_b = (*b);
 	tmp_a = (*a);
@@ -33,5 +33,5 @@ void	ft_pb(t_lst **a, t_lst **b, t_lst *stack)
 		*b = tmp_a;
 		tmp_a->next = tmp_b;
 	}
-	ft_printf("pb\n");
+	ft_printf("\033[31mpb\033[0m\n");
 }

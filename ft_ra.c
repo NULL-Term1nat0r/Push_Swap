@@ -6,7 +6,7 @@
 /*   By: estruckm <estruckm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 13:25:01 by vziegler          #+#    #+#             */
-/*   Updated: 2023/02/18 22:16:41 by estruckm         ###   ########.fr       */
+/*   Updated: 2023/02/22 01:40:31 by estruckm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,13 @@
 
 void	ft_ra(t_lst **head)
 {
-	t_lst *tmp;
-	t_lst *last;
+	t_lst	*tmp;
+	t_lst	*last;
 
 	tmp = *head;
 	last = ft_last(*head);
-	//Connecting head_ref to second node
 	*head = (*head)->next;
-	//Connecting last element to tmp;
 	last->next = tmp;
-	//setting tmp->next to NULL so the link list is closed again
 	tmp->next = NULL;
-	ft_printf("ra\n");
+	ft_printf("\033[31mra\033[0m\n");
 }

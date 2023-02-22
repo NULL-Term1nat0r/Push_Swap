@@ -6,7 +6,7 @@
 /*   By: estruckm <estruckm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 11:40:14 by vziegler          #+#    #+#             */
-/*   Updated: 2023/02/16 21:05:39 by estruckm         ###   ########.fr       */
+/*   Updated: 2023/02/21 02:15:43 by estruckm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_check_sort(t_lst **head, int int_count, int direction)
 {
-	t_lst *tmp;
+	t_lst	*tmp;
 
 	tmp = *head;
 	if (int_count == 1)
