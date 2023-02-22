@@ -6,7 +6,7 @@
 /*   By: estruckm <estruckm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 19:07:30 by estruckm          #+#    #+#             */
-/*   Updated: 2023/02/22 00:47:09 by estruckm         ###   ########.fr       */
+/*   Updated: 2023/02/22 16:53:36 by estruckm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ void	ft_push_swap(char **argv, t_lst *stack)
 			exit(1);
 		}
 	}
-	ft_print_list(&stack->a);
 	ft_check_repeat(&stack->a);
 	ft_sort(stack, stack->size_a);
 }
@@ -46,7 +45,8 @@ int	main(int argc, char **argv)
 			argv = ft_split(*argv, ' ');
 		ft_push_swap(argv, stack);
 	}
-	ft_print_list(&stack->a);
 	free(stack);
 	return (0);
 }
+//48 	ft_print_list(&stack->a);
+// 30 	ft_print_list(&stack->a);

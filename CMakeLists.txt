@@ -1,2 +1,0 @@
-add_executable(push_swap ft_print_list.c ft_count_stack.c ft_free_list.c ft_get_pivot_element.c ft_second_last.c ft_last.c ft_push_front.c ft_count_arg.c ft_ps_atoi.c ft_error.c ft_check_repeat.c ft_sort.c ft_sort_small_a.c ft_sort_small_b.c ft_check_sort.c ft_sa.c ft_sb.c ft_sort_three_a.c ft_rra.c ft_rrb.c ft_ra.c ft_rb.c ft_pa.c ft_pb.c ft_quicksort_a.c ft_quicksort_b.c ft_push.c ft_return.c ft_empty_b.c)
-target_link_libraries(push_swap )

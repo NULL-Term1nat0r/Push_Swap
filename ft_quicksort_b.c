@@ -6,7 +6,7 @@
 /*   By: estruckm <estruckm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 19:07:21 by estruckm          #+#    #+#             */
-/*   Updated: 2023/02/22 02:16:04 by estruckm         ###   ########.fr       */
+/*   Updated: 2023/02/22 17:03:41 by estruckm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ int	ft_quicksort_b(t_lst *stack, int int_count, int rev)
 	}
 	if (!ft_get_pivot_element(&stack->b, &pivot, int_count))
 		return (0);
-	printf("median_b: %d\n", pivot);
 	while (int_count != items / 2)
 	{
 		if (stack->b->nbr >= pivot && int_count--)
@@ -36,12 +35,10 @@ int	ft_quicksort_b(t_lst *stack, int int_count, int rev)
 		else if (++rev)
 			ft_rb(&stack->b);
 	}
-	ft_print_list(&stack->b);
 	while (items / 2 != stack->size_b && rev--)
 		ft_rrb(&stack->b);
 	return (ft_return(stack, items));
 }
 
-//Die in der vorherigen Rekursion übergebene Anzahl / 2 entspricht int_count.
-//Bei ungeraden Zahlen wird abgerundet.
-//Z. 35 ++rev, weil man sonst nicht Bedingung erfüllt
+// 31	printf("median_b: %d\n", pivot);
+// 38 ft_print_list(&stack->b);

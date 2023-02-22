@@ -5,16 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: estruckm <estruckm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/14 13:13:32 by vziegler          #+#    #+#             */
-/*   Updated: 2023/02/22 01:46:51 by estruckm         ###   ########.fr       */
+/*   Created: 2023/02/22 16:41:24 by estruckm          #+#    #+#             */
+/*   Updated: 2023/02/22 18:16:27 by estruckm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "./ft_printf/libft/libft.h"
-# include "./ft_printf/ft_printf.h"
+# include "./ft_printfnew/libft/libft.h"
+# include "./ft_printfnew/ft_printf.h"
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
